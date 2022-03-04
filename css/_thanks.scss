@@ -1,0 +1,74 @@
+// Styling for thanks page
+
+.thanks .reveal {
+    .slides {
+        $bg-height: 100%;
+        $left-margin: 0%;
+        $top-margin: 0%;
+        $width: 100%;
+        $y-offset: 0;
+        margin: 0;
+
+        > section {
+            /* Margin percentages (e.g. 5%) are treated as being relative to the
+            containing element's *width*, even the top and bottom margins. */
+            margin: $section-top-margin / $aspect-ratio $section-left-margin;
+            width: $section-width;
+            height: $section-height;
+        }
+
+        background:
+            url(../images/SUSE/SUSE-logo.svg)
+               5% 5%              //  x/y positions
+             / 15% 15%              //  x/y sizes
+                no-repeat,
+            url('../images/SUSE/infinity.png')
+               0% 100%
+             / 100% 40%
+               no-repeat,
+            $pine;
+
+        position: relative;
+
+        h1 {
+            position: absolute;
+            top: 40%;
+
+            color: white;
+            font-size: 4rem;
+            font-weight: normal;
+
+            margin-bottom: 0em;
+        }
+
+        text-align: inherit;
+
+        p, div {
+            color: white;
+            font-size: 0.7em;
+        }
+
+        .more {
+            position: absolute;
+            left: 25%;
+            bottom: 50%;
+        }
+
+        .address {
+            position: absolute;
+            left: 50%;
+            bottom: 50%;
+        }
+
+        .legal {
+            position: absolute;
+            font-size: 0.4em;
+            width: 20%;
+            left: 70%;
+            bottom: 50%;
+        }
+    }
+
+    @include no-slide-numbers;
+}
+

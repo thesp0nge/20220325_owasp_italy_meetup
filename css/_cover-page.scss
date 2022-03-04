@@ -1,0 +1,112 @@
+// Styling for cover page of presentation
+
+@mixin cover($bg_image) {
+    .slides {
+        $bg-height: 100%;
+        $left-margin: 0%;
+        $top-margin: 0%;
+        $width: 100%;
+        $y-offset: 0;
+        margin: 0;
+
+        > section {
+            width: 100%;
+            height: 100%;
+        }
+
+        background:
+            url(../images/SUSE/SUSE-logo.svg)
+               5% 5%              //  x/y positions
+             / 15% 15%              //  x/y sizes
+                no-repeat,
+            url('../images/SUSE/' + $bg_image + '.png')
+               0% 100%
+             / 100% 40%
+               no-repeat,
+            $pine;
+
+        position: relative;
+
+        .date-location {
+            color: $jungle;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 20%;
+            left: 1%;
+        }
+
+        .title {
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            left: 1%;
+
+            h1, h2, h3, h4, h5, h6 {
+                color: white;
+            }
+
+            h1 {
+                font-size: 4rem;
+                width: 45%;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+                position: absolute;
+                left: 55%;
+                top: 0%;
+                width: 35%;
+            }
+
+            h3 {
+                font-size: 2rem;
+            }
+        }
+
+
+        text-align: inherit;
+
+        h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        .qr-embedded {
+            position: absolute;
+            top: -2%;
+            right: 7%;
+            width: 30%;
+            height: 30%;
+
+            .qrcode {
+                position: relative;
+                left: 30%;
+            }
+
+            h2 {
+                font-size: 90%;
+                text-align: right;
+                margin-top: 0%;
+                margin-right: 14%;
+                a {
+                    color: white !important;
+                }
+            }
+        }
+    }
+
+    h1, h2, h3 {
+        margin-bottom: 0em;
+    }
+
+    @include no-slide-numbers;
+}
+
+.cover .reveal {
+    @include cover("infinity");
+}
+
+
+.cover-alternate .reveal {
+    @include cover("infinity-mars");
+}
